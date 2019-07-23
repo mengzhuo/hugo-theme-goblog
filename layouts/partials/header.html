@@ -1,0 +1,15 @@
+<header id="topbar">
+	<div class="container">
+	    <h1 ><a href="/">{{ .Site.Title }}</a></h1>
+		    <div class="menu">
+			    {{ range .Site.Params.menu }}
+			    <a href="/{{ .url }}">{{ .name }}</a>
+			    {{ end }}
+			    {{ if .Site.Params.googleSearch }}
+				<form onsubmit="return dispatch()">
+					    <input id="q" placeholder="Search" type="text">
+				</form>			
+			    {{ end }}
+		    </div>
+	</div>
+</header>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" >
+     <head>
+	 {{ partial "meta.html" . }}
+	 <title>{{ .Site.Title }}</title>
+    <link rel="canonical" href="{{ .Permalink }}" />
+{{ $sitetitle := .Site.Title }}
+{{ with .OutputFormats.Get "RSS" }}
+    <link
+      href="{{ .RelPermalink }}"
+      rel="alternate"
+      type="application/rss+xml"
+      title="{{ $sitetitle }}"
+    />
+{{ end }}
+<link rel="stylesheet" href="/css/base.css" >
+{{ if .Site.Params.googleSearch  }}
+<script>
+function dispatch() {
+    var q = document.getElementById("q");
+    if (q.value == "") {
+	    return false;
+    }
+    {{ $url := urls.Parse .Site.BaseURL }}		
+    var url = '//www.google.com/search?q=site:{{ $url.Host }}%20' + q.value;
+    if (navigator.userAgent.indexOf('iPad') > -1 || navigator.userAgent.indexOf('iPhone') > -1 || navigator.userAgent.indexOf('iPhone') > -1) {
+		location.href = url;
+		return false;
+    }
+    window.open(url, "_blank");
+    return false;
+}
+</script>
+{{ end }}
+</head>

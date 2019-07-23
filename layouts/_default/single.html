@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" >
+     <head>
+	 {{ partial "meta.html" . }}
+	 <title>{{ .Site.Title }}</title>
+    <link rel="canonical" href="{{ .Permalink }}" />
+{{ $sitetitle := .Site.Title }}
+{{ with .OutputFormats.Get "RSS" }}
+    <link
+      href="{{ .RelPermalink }}"
+      rel="alternate"
+      type="application/rss+xml"
+      title="{{ $sitetitle }}"
+    />
+{{ end }}
+    {{ partial "head.html" . }}
+    </head>
+    <body>
+	{{ partial "header.html" . }}
+	<div id="main" class="container">
+	{{ if and (gt .WordCount 200 ) (not .Params.no_toc) }}
+	<div id="toc">
+	<aside>
+	    <header>
+	    <h2>{{.Title}}</h2>
+	    </header>
+	    {{.TableOfContents}}
+	</aside>
+	</div>
+	{{ end }}
+	{{ partial "doc.html" . }}
+	</div>
+	{{ partial "footer.html" . }}
+    </body>
+</html>

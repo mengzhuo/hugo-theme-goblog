@@ -1,0 +1,14 @@
+    {{ partial "head.html" . }}
+    <body>
+	{{ partial "header.html" . }}
+	<div id="main" class="container">
+	{{ range (.Paginator 5).Pages }}
+		{{ partial "doc.html" . }}
+	{{ end }}
+	<nav>	
+	{{ template "_internal/pagination.html" . }}
+	</nav>
+	</div>
+	{{ partial "footer.html" . }}
+    </body>
+</html>

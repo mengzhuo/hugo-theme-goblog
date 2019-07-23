@@ -1,0 +1,9 @@
+<article >
+    <header class="row">
+		<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <div class="meta">
+		<time pubdate='{{ .PublishDate.Format "2006-01-02" }}'>{{ .PublishDate.Format "2006-01-02"}}</time>
+	</div>
+    </header>
+	{{ .Content }}
+</article>
