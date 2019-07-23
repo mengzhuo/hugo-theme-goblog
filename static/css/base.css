@@ -18,8 +18,8 @@ ul {max-width:800px;}
 #sidebar { float: right; padding-left: 20px; width: 40%; max-width: 250px; background: #F3F3F3; margin: 20px 0 20px 20px; text-align:left; }
 #sidebar ul { padding: 0; }
 #sidebar li { list-style-type: none; }
-footer {margin:3em 0 0;text-align:center;color:#666;}
-footer p {max-width:100%;margin:1em auto;font-size:0.5em;}
+#footer {margin:1em 0;text-align:center;color:#666;font-size:0.5em;color:#aaa;}
+#footer a {color:#aaa;}
 .title {font-size:1.5em;margin:1em 0 0em;line-height:1em;}
 .editor {min-height:300px;padding-top:5px;}
 .editor .tag{border-bottom:1px dashed #444;}
