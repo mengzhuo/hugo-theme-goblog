@@ -28,7 +28,8 @@ time {color:#888;font-size:0.6em;}
 pre, code {font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace;font-size:0.875rem;}
 pre {background: #EFEFEF; padding: 10px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; overflow:auto;}
 img {max-width:95% !important; height:auto;}
-blockquote {border-left:2px dashed #ccc;padding-left:1em;margin-left:1em;}
+blockquote {border-left:2px dashed #ccc;padding:5px 1em;margin-left:1em;}
+blockquote p {padding:0;margin:0;}
 h2,h3,h4 {color:#375EAB;}
 .related_header { font-size: 20px; background: #E0EBF5; padding: 8px; line-height: 1.25; font-weight: normal; }
 .tag-row {margin-top:10px;}
